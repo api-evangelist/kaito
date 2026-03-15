@@ -1,0 +1,14 @@
+name: KAITO
+description: Kubernetes AI Toolchain Operator - An operator that automates the AI/ML
+  inference model deployment in a Kubernetes cluster
+url: https://github.com/Azure/kaito
+tags:
+- Kubernetes
+- AI
+- Machine Learning
+- Operator
+- Inference
+created: '2025'
+modified: '2025'
+apis: []
+common: []
