@@ -47,9 +47,9 @@ common:
     url: https://kaito-project.github.io/kaito/docs/
   - type: Installation
     url: https://kaito-project.github.io/kaito/docs/installation
-  - type: Getting Started
+  - type: GettingStarted
     url: https://kaito-project.github.io/kaito/docs/quick-start
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/kaito-project
   - type: Source Code
     url: https://github.com/kaito-project/kaito
