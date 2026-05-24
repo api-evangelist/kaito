@@ -1,0 +1,302 @@
+openapi: 3.1.0
+info:
+  title: KAITO RAGEngine REST API
+  description: >-
+    REST API for the KAITO RAGEngine, used to manage indexes, ingest and
+    retrieve documents, persist or reload indexes from storage, and run
+    OpenAI-compatible chat completions grounded in indexed content. The API
+    is exposed by a self-hosted RAGEngine service running in a Kubernetes
+    cluster.
+  version: 1.0.0
+  contact:
+    name: KAITO Project
+    url: https://kaito-project.github.io/kaito/
+  license:
+    name: MIT
+    url: https://github.com/kaito-project/kaito/blob/main/LICENSE
+
+servers:
+  - url: http://localhost:8080
+    description: Self-hosted KAITO RAGEngine endpoint (replace with the in-cluster service URL).
+
+tags:
+  - name: Index Management
+    description: Create, list, and delete RAG indexes and their documents.
+  - name: Persistence
+    description: Persist indexes to storage or reload them.
+  - name: Retrieval
+    description: Retrieve relevant nodes from a RAG index.
+  - name: Chat
+    description: OpenAI-compatible chat completions grounded in RAG indexes.
+
+paths:
+  /index:
+    post:
+      operationId: createIndex
+      summary: Create or append documents to an index
+      description: Create a RAG index (or append to it) with the supplied documents.
+      tags:
+        - Index Management
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                index_name:
+                  type: string
+                documents:
+                  type: array
+                  items:
+                    type: object
+              required:
+                - index_name
+                - documents
+      responses:
+        '200':
+          description: Index created or updated.
+          content:
+            application/json:
+              schema:
+                type: object
+  /indexes/{index_name}/documents:
+    get:
+      operationId: listIndexDocuments
+      summary: List documents in an index
+      description: Return documents stored in the named index with optional pagination and filters.
+      tags:
+        - Index Management
+      parameters:
+        - name: index_name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          schema:
+            type: integer
+        - name: max_text_length
+          in: query
+          schema:
+            type: integer
+        - name: metadata_filter
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of documents.
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      operationId: appendIndexDocuments
+      summary: Append documents to an index
+      description: Append additional documents (each with a doc_id) to an existing index.
+      tags:
+        - Index Management
+      parameters:
+        - name: index_name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: object
+              required:
+                - documents
+      responses:
+        '200':
+          description: Documents appended.
+          content:
+            application/json:
+              schema:
+                type: object
+  /indexes/{index_name}/documents/delete:
+    post:
+      operationId: deleteIndexDocuments
+      summary: Delete documents from an index
+      description: Delete documents from the named index by doc_id.
+      tags:
+        - Index Management
+      parameters:
+        - name: index_name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                doc_ids:
+                  type: array
+                  items:
+                    type: string
+              required:
+                - doc_ids
+      responses:
+        '200':
+          description: Documents deleted.
+          content:
+            application/json:
+              schema:
+                type: object
+  /indexes/{index_name}:
+    delete:
+      operationId: deleteIndex
+      summary: Delete an index
+      description: Delete the entire named index.
+      tags:
+        - Index Management
+      parameters:
+        - name: index_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Index deleted.
+  /persist/{index_name}:
+    post:
+      operationId: persistIndex
+      summary: Persist an index to storage
+      description: Persist the named index to storage at an optional path.
+      tags:
+        - Persistence
+      parameters:
+        - name: index_name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                path:
+                  type: string
+      responses:
+        '200':
+          description: Index persisted.
+  /load/{index_name}:
+    post:
+      operationId: loadIndex
+      summary: Load an index from storage
+      description: Load a persisted index back into the RAGEngine.
+      tags:
+        - Persistence
+      parameters:
+        - name: index_name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                path:
+                  type: string
+                overwrite:
+                  type: boolean
+      responses:
+        '200':
+          description: Index loaded.
+  /retrieve:
+    post:
+      operationId: retrieve
+      summary: Retrieve nodes from a RAG index
+      description: Retrieve the top relevant nodes from a RAG index for a given query.
+      tags:
+        - Retrieval
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                index_name:
+                  type: string
+                query:
+                  type: string
+                max_node_count:
+                  type: integer
+                metadata_filter:
+                  type: object
+              required:
+                - index_name
+                - query
+      responses:
+        '200':
+          description: Retrieved nodes.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/chat/completions:
+    post:
+      operationId: chatCompletions
+      summary: RAG-grounded chat completions
+      description: >-
+        OpenAI-compatible chat completion endpoint that grounds responses in
+        the specified RAG index.
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                index_name:
+                  type: string
+                model:
+                  type: string
+                messages:
+                  type: array
+                  items:
+                    type: object
+                temperature:
+                  type: number
+                max_tokens:
+                  type: integer
+                context_token_ratio:
+                  type: number
+              required:
+                - messages
+      responses:
+        '200':
+          description: Chat completion result.
+          content:
+            application/json:
+              schema:
+                type: object
