@@ -2,17 +2,23 @@
 
 KAITO (Kubernetes AI Toolchain Operator) is an open-source operator suite that automates LLM model inference, fine-tuning, and Retrieval Augmented Generation (RAG) engine deployment in Kubernetes clusters. It simplifies the process of deploying large AI models through optimized preset configurations and integrates with Karpenter for GPU node auto-provisioning.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/kaito/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/kaito/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/kaito/refs/heads/main/apis.yml)
 
 ## Scope
 
 - **Type:** Index
-- **Position:** Consuming
-- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
- - AI, GPU, Inference, Kubernetes, LLM, Machine Learning, Open Source, Operator, RAG
+- AI
+- GPU
+- Inference
+- Kubernetes
+- LLM
+- Machine Learning
+- Open Source
+- Operator
+- RAG
 
 ## Timestamps
 
@@ -25,16 +31,21 @@ KAITO (Kubernetes AI Toolchain Operator) is an open-source operator suite that a
 
 RAGEngine exposes endpoints for managing retrieval-augmented generation services with embedded vector databases, including document indexing, retrieval, and chat completion endpoints.
 
-**Human URL:** [https://kaito-project.github.io/kaito/docs/rag](https://kaito-project.github.io/kaito/docs/rag)
+- **Human URL:** [https://kaito-project.github.io/kaito/docs/rag](https://kaito-project.github.io/kaito/docs/rag)
 
-#### Tags:
+#### Tags
 
- - AI, RAG, Vector Database, Inference
+- AI
+- RAG
+- Vector Database
+- Inference
 
 #### Properties
 
 - [Documentation](https://kaito-project.github.io/kaito/docs/rag)
-- [GitHub](https://github.com/kaito-project/kaito)
+- [Git Hub](https://github.com/kaito-project/kaito)
+- [Postman Collection](collections/kaito.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/kaito.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
 
@@ -43,10 +54,9 @@ RAGEngine exposes endpoints for managing retrieval-augmented generation services
 - [Installation](https://kaito-project.github.io/kaito/docs/installation)
 - [Getting Started](https://kaito-project.github.io/kaito/docs/quick-start)
 - [GitHub Organization](https://github.com/kaito-project)
-- [Source Code](https://github.com/kaito-project/kaito)
+- [Source  Code](https://github.com/kaito-project/kaito)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com
