@@ -41,6 +41,8 @@ apis:
       - type: GitHub
         url: https://github.com/kaito-project/kaito
 common:
+  - type: AgenticAccess
+    url: agentic-access/kaito-agentic-access.yml
   - type: Website
     url: https://kaito-project.github.io/kaito/
   - type: Documentation
