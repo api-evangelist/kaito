@@ -7,7 +7,19 @@ description: >-
   the process of deploying large AI models through optimized preset
   configurations and integrates with Karpenter for GPU node auto-provisioning.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kaito.png
 tags:
   - AI
   - GPU
@@ -23,23 +35,58 @@ created: '2025-01-01'
 modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
-  - aid: kaito:rag-engine
-    name: KAITO RAGEngine API
-    description: >-
-      RAGEngine exposes endpoints for managing retrieval-augmented generation
-      services with embedded vector databases, including document indexing,
-      retrieval, and chat completion endpoints.
-    humanURL: https://kaito-project.github.io/kaito/docs/rag
-    tags:
-      - AI
-      - RAG
-      - Vector Database
-      - Inference
-    properties:
-      - type: Documentation
-        url: https://kaito-project.github.io/kaito/docs/rag
-      - type: GitHub
-        url: https://github.com/kaito-project/kaito
+- aid: kaito:rag-engine
+  name: KAITO RAGEngine API
+  description: >-
+    RAGEngine exposes endpoints for managing retrieval-augmented generation services with embedded vector
+    databases, including document indexing, retrieval, and chat completion endpoints.
+  humanURL: https://kaito-project.github.io/kaito/docs/rag
+  tags:
+  - AI
+  - RAG
+  - Vector Database
+  - Inference
+  properties:
+  - type: Documentation
+    url: https://kaito-project.github.io/kaito/docs/rag
+  - type: GitHub
+    url: https://github.com/kaito-project/kaito
+- aid: kaito:kaito-chat-api
+  name: KAITO Chat API
+  description: OpenAI-compatible chat completions grounded in RAG indexes.
+  humanURL: https://kaito-project.github.io/kaito/docs/rag
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/kaito-chat-api-openapi.yml
+- aid: kaito:kaito-index-management-api
+  name: KAITO Index Management API
+  description: Create, list, and delete RAG indexes and their documents.
+  humanURL: https://kaito-project.github.io/kaito/docs/rag
+  tags:
+  - Index Management
+  properties:
+  - type: OpenAPI
+    url: openapi/kaito-index-management-api-openapi.yml
+- aid: kaito:kaito-persistence-api
+  name: KAITO Persistence API
+  description: Persist indexes to storage or reload them.
+  humanURL: https://kaito-project.github.io/kaito/docs/rag
+  tags:
+  - Persistence
+  properties:
+  - type: OpenAPI
+    url: openapi/kaito-persistence-api-openapi.yml
+- aid: kaito:kaito-retrieval-api
+  name: KAITO Retrieval API
+  description: Retrieve relevant nodes from a RAG index.
+  humanURL: https://kaito-project.github.io/kaito/docs/rag
+  tags:
+  - Retrieval
+  properties:
+  - type: OpenAPI
+    url: openapi/kaito-retrieval-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/kaito-agentic-access.yml
