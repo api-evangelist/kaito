@@ -1,0 +1,20 @@
+{
+  "provider": "kaito",
+  "sources": [
+    "kaito-chat-api-openapi.yml",
+    "kaito-index-management-api-openapi.yml",
+    "kaito-persistence-api-openapi.yml",
+    "kaito-retrieval-api-openapi.yml"
+  ],
+  "outputs": [
+    "kaito-chat-api-openapi.yml",
+    "kaito-index-management-api-openapi.yml",
+    "kaito-persistence-api-openapi.yml",
+    "kaito-retrieval-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
