@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "c04259dc-f0bd-45bf-bf52-f7f58a458342",
+      "name": "Retrieval",
+      "description": {
+        "content": "Retrieve relevant nodes from a RAG index.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd20b6ed-63f2-4d0d-8a0e-3e0b9e10434f",
+          "name": "Retrieve nodes from a RAG index",
+          "request": {
+            "name": "Retrieve nodes from a RAG index",
+            "description": {
+              "content": "Retrieve the top relevant nodes from a RAG index for a given query.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"index_name\": \"<string>\",\n  \"query\": \"<string>\",\n  \"max_node_count\": \"<integer>\",\n  \"metadata_filter\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a5a5fffa-77ca-4ebf-b6d0-587775ecc35a",
+              "name": "Retrieved nodes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"index_name\": \"<string>\",\n  \"query\": \"<string>\",\n  \"max_node_count\": \"<integer>\",\n  \"metadata_filter\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fea7ef5e-7595-4cb7-afc5-fce4bf9a608c",
+    "name": "KAITO RAGEngine REST Chat Retrieval API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the KAITO RAGEngine, used to manage indexes, ingest and retrieve documents, persist or reload indexes from storage, and run OpenAI-compatible chat completions grounded in indexed content. The API is exposed by a self-hosted RAGEngine service running in a Kubernetes cluster.\n\nContact Support:\n Name: KAITO Project",
+      "type": "text/plain"
+    }
+  }
+}

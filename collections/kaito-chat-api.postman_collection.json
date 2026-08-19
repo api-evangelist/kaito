@@ -1,0 +1,127 @@
+{
+  "item": [
+    {
+      "id": "e7acc81e-f8af-4e91-a99e-73dabfd7c75d",
+      "name": "Chat",
+      "description": {
+        "content": "OpenAI-compatible chat completions grounded in RAG indexes.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "36ec80f9-9684-42ca-86ff-37238cb23e97",
+          "name": "RAG-grounded chat completions",
+          "request": {
+            "name": "RAG-grounded chat completions",
+            "description": {
+              "content": "OpenAI-compatible chat completion endpoint that grounds responses in the specified RAG index.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messages\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"index_name\": \"<string>\",\n  \"model\": \"<string>\",\n  \"temperature\": \"<number>\",\n  \"max_tokens\": \"<integer>\",\n  \"context_token_ratio\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0c4e72fb-73e4-40a5-8755-82806860accf",
+              "name": "Chat completion result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messages\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"index_name\": \"<string>\",\n  \"model\": \"<string>\",\n  \"temperature\": \"<number>\",\n  \"max_tokens\": \"<integer>\",\n  \"context_token_ratio\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f36806ff-45ae-499c-a9f3-3629d256f1c0",
+    "name": "KAITO RAGEngine REST Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the KAITO RAGEngine, used to manage indexes, ingest and retrieve documents, persist or reload indexes from storage, and run OpenAI-compatible chat completions grounded in indexed content. The API is exposed by a self-hosted RAGEngine service running in a Kubernetes cluster.\n\nContact Support:\n Name: KAITO Project",
+      "type": "text/plain"
+    }
+  }
+}

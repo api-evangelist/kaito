@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KAITO RAGEngine REST Chat Persistence API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Persistence",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Persist an index to storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/persist/:index_name",
+            "params": [
+              {
+                "name": "index_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Persist the named index to storage at an optional path."
+        },
+        {
+          "info": {
+            "name": "Load an index from storage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/load/:index_name",
+            "params": [
+              {
+                "name": "index_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Load a persisted index back into the RAGEngine."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

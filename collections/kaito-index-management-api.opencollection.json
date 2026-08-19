@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KAITO RAGEngine REST Chat Index Management API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Index Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create or append documents to an index",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/index",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a RAG index (or append to it) with the supplied documents."
+        },
+        {
+          "info": {
+            "name": "List documents in an index",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/indexes/:index_name/documents",
+            "params": [
+              {
+                "name": "index_name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_text_length",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "metadata_filter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return documents stored in the named index with optional pagination and filters."
+        },
+        {
+          "info": {
+            "name": "Append documents to an index",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/indexes/:index_name/documents",
+            "params": [
+              {
+                "name": "index_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Append additional documents (each with a doc_id) to an existing index."
+        },
+        {
+          "info": {
+            "name": "Delete documents from an index",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/indexes/:index_name/documents/delete",
+            "params": [
+              {
+                "name": "index_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete documents from the named index by doc_id."
+        },
+        {
+          "info": {
+            "name": "Delete an index",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/indexes/:index_name",
+            "params": [
+              {
+                "name": "index_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete the entire named index."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,230 @@
+{
+  "item": [
+    {
+      "id": "2744d198-604d-4fe3-8a32-a12aab97d9e4",
+      "name": "Persistence",
+      "description": {
+        "content": "Persist indexes to storage or reload them.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2704f923-0614-46f4-8a62-ebcf36a2b750",
+          "name": "Persist an index to storage",
+          "request": {
+            "name": "Persist an index to storage",
+            "description": {
+              "content": "Persist the named index to storage at an optional path.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persist",
+                ":index_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "index_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"path\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2a49c194-25f6-4f84-b372-fd3e9a5f1e17",
+              "name": "Index persisted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persist",
+                    ":index_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "index_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"path\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c39029e3-98e5-494e-bdb4-11b19b9ea20f",
+          "name": "Load an index from storage",
+          "request": {
+            "name": "Load an index from storage",
+            "description": {
+              "content": "Load a persisted index back into the RAGEngine.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "load",
+                ":index_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "index_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"path\": \"<string>\",\n  \"overwrite\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9d08f2d3-4f76-496d-98df-62927b11c696",
+              "name": "Index loaded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "load",
+                    ":index_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "index_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"path\": \"<string>\",\n  \"overwrite\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:8080",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a09814e9-897e-45b4-b484-1af2ed970b09",
+    "name": "KAITO RAGEngine REST Chat Persistence API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the KAITO RAGEngine, used to manage indexes, ingest and retrieve documents, persist or reload indexes from storage, and run OpenAI-compatible chat completions grounded in indexed content. The API is exposed by a self-hosted RAGEngine service running in a Kubernetes cluster.\n\nContact Support:\n Name: KAITO Project",
+      "type": "text/plain"
+    }
+  }
+}
