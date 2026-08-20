@@ -21,6 +21,16 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kaito.png
 tags:
+  - Artificial Intelligence
+  - GPU
+  - Inference
+  - Kubernetes
+  - LLM
+  - Machine-Learning
+  - Open-Source
+  - Operator
+  - RAG
+tags_raw:
   - AI
   - GPU
   - Inference
@@ -42,6 +52,11 @@ apis:
     databases, including document indexing, retrieval, and chat completion endpoints.
   humanURL: https://kaito-project.github.io/kaito/docs/rag
   tags:
+  - Artificial Intelligence
+  - RAG
+  - Vector Database
+  - Inference
+  tags_raw:
   - AI
   - RAG
   - Vector Database
