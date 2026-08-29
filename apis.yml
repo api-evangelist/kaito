@@ -7,6 +7,17 @@ description: >-
   the process of deploying large AI models through optimized preset
   configurations and integrates with Karpenter for GPU node auto-provisioning.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
