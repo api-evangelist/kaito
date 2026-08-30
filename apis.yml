@@ -114,6 +114,9 @@ apis:
   - type: OpenAPI
     url: openapi/kaito-retrieval-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/kaito-capability-edges.yml
+    name: KAITO Business Capability Map
   - type: AgenticAccess
     url: agentic-access/kaito-agentic-access.yml
   - type: Website
