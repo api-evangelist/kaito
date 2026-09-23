@@ -1,10 +1,7 @@
 {
   "provider": "kaito",
   "sources": [
-    "kaito-chat-api-openapi.yml",
-    "kaito-index-management-api-openapi.yml",
-    "kaito-persistence-api-openapi.yml",
-    "kaito-retrieval-api-openapi.yml"
+    "_original/kaito-openapi.yml"
   ],
   "outputs": [
     "kaito-chat-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "kaito-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "kaito-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kaito-index-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kaito-persistence-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kaito-retrieval-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

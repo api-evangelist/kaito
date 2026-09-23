@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: KAITO RAGEngine REST Chat Persistence API
+  title: KAITO RAGEngine REST Persistence API
   description: REST API for the KAITO RAGEngine, used to manage indexes, ingest and retrieve documents, persist or reload indexes from storage, and run OpenAI-compatible chat completions grounded in indexed content. The API is exposed by a self-hosted RAGEngine service running in a Kubernetes cluster.
   version: 1.0.0
   contact:
