@@ -9,14 +9,19 @@ description: >-
 type: Index
 deliveryModel:
   model: unknown
-  open_source: false
+  license_evidence:
+    repo: kaito-project/kaito
+    spdx: NOASSERTION
+    stars: 1014
+  open_source: unknown
   commercial: false
   callable_host: false
   label: Delivery model not determined — needs a product licence on record
   confidence: low
   source:
   - openapi
-  generated: '2026-08-28'
+  - repository-unlicensed
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -37,8 +42,8 @@ tags:
   - Inference
   - Kubernetes
   - LLM
-  - Machine-Learning
-  - Open-Source
+  - Machine Learning
+  - Open Source
   - Operator
   - RAG
 tags_raw:
@@ -51,6 +56,8 @@ tags_raw:
   - Open Source
   - Operator
   - RAG
+  - Machine-Learning
+  - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/kaito/refs/heads/main/apis.yml
 created: '2025-01-01'
 modified: '2026-04-28'
