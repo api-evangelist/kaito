@@ -13,7 +13,7 @@ servers:
 - url: http://localhost:8080
   description: Self-hosted KAITO RAGEngine endpoint (replace with the in-cluster service URL).
 tags:
-- name: Chat
+- name: Chat Completions
   description: OpenAI-compatible chat completions grounded in RAG indexes.
 paths:
   /v1/chat/completions:
@@ -22,7 +22,7 @@ paths:
       summary: RAG-grounded chat completions
       description: OpenAI-compatible chat completion endpoint that grounds responses in the specified RAG index.
       tags:
-      - Chat
+      - Chat Completions
       requestBody:
         required: true
         content:

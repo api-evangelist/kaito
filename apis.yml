@@ -84,15 +84,6 @@ apis:
     url: https://kaito-project.github.io/kaito/docs/rag
   - type: GitHub
     url: https://github.com/kaito-project/kaito
-- aid: kaito:kaito-chat-api
-  name: KAITO Chat API
-  description: OpenAI-compatible chat completions grounded in RAG indexes.
-  humanURL: https://kaito-project.github.io/kaito/docs/rag
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/kaito-chat-api-openapi.yml
 - aid: kaito:kaito-index-management-api
   name: KAITO Index Management API
   description: Create, list, and delete RAG indexes and their documents.
@@ -120,6 +111,15 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/kaito-retrieval-api-openapi.yml
+- aid: kaito:kaito-chat-completions-api
+  name: KAITO Chat Completions API
+  description: OpenAI-compatible chat completions grounded in RAG indexes.
+  humanURL: https://kaito-project.github.io/kaito/docs/rag
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/kaito-chat-completions-api-openapi.yml
 common:
   - type: CapabilityMap
     url: capabilities/kaito-capability-edges.yml
