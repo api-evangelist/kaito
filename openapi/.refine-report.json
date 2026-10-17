@@ -9,16 +9,19 @@
     "kaito-persistence-api-openapi.yml",
     "kaito-retrieval-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "kaito-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "superseded outputs removed: kaito-chat-completions-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 5 total)"
   ],
   "skipped": [
-    "kaito-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "kaito-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "kaito-index-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "kaito-persistence-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "kaito-retrieval-api-openapi.yml: previously refined output, superseded by openapi/_original/"
